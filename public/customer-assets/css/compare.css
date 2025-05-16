@@ -1,0 +1,44 @@
+#add-to-compare-product input[type=radio]:checked~.product-choosed-compare{
+    border-radius: 0.4rem;
+    transition: 0.4s;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 0rem 0rem 0.4rem 0.1rem rgba(214 12 12 / 46%);
+    padding: 0.3rem;
+
+}
+
+.add-to-compare-product{
+    height: 100%;
+    position: relative;
+    border-radius: 0.25rem;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-choosed-compare:hover{
+    border-radius: 0.4rem;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 0rem 0rem 0.4rem 0.1rem rgba(0, 0, 0, 0.1);
+    padding: 0.3rem;
+    transition: 0.4s;
+}
+
+.compare a h3{
+    font-size:1rem;
+    overflow:hidden;
+    line-height:2.15;
+    text-align:center;
+}
+
+.compare a div{
+    font-size: 0.8rem;
+}
+
+#add-product .modal-dialog{
+    max-width:calc(100% - 35%);
+}
+

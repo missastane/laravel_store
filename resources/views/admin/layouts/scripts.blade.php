@@ -1,0 +1,21 @@
+<script src="{{asset('admin-assets/js/jquery-3.5.1.min.js')}}"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> -->
+<script src="{{asset('admin-assets/js/popper.min.js.js')}}"></script>
+<script src="{{asset('admin-assets/js/bootstrap/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin-assets/select2/js/select2.min.js')}}"></script>
+<script src="{{asset('admin-assets/sweetalert/sweetalert2.min.js')}}"></script>
+<script src="{{asset('admin-assets/js/grid.js')}}"></script>
+<script>
+
+    let notificationDropDown = document.getElementById('header-notification-toggle');
+    notificationDropDown.addEventListener('click', function () {
+        $.ajax({
+            url: "/admin/notification/read-all",
+            type: "POST",
+            data: { "_token": "{{csrf_token()}}" },
+            success: function () {
+                $('#notification-count').html('');
+            }
+        })
+    });
+</script>

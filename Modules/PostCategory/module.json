@@ -1,0 +1,13 @@
+{
+    "name": "PostCategory",
+    "alias": "postcategory",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PostCategory\\Providers\\PostCategoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
