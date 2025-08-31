@@ -129,7 +129,7 @@ class LoginRegisterController extends Controller
     public function loginConfirm($token, LoginRegisterRequest $request)
     {
         $inputs = $request->all();
-        $otp = Otp::where('token', $token)->where('used', 0)->where('created_at', '>=', Carbon::now()->subMinute(2)->toDateTimeString())->first();
+        $otp = Otp::where('token', $token)->where('used', 0)->where('created_at', '>=', Carbon::now()->subMinutes(2)->toDateTimeString())->first();
         if (empty($otp)) {
             return redirect()->route('auth.customer.login-register-form', $token)->withErrors(['id' => 'آدرس وارد شده معتبر نیست']);
         }

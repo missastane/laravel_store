@@ -171,7 +171,7 @@ class ProfileController extends Controller
     public function userCantactConfirm($token, Request $request)
     {
         $inputs = $request->all();
-        $otp = Otp::where('token', $token)->where('used', 0)->where('created_at', '>=', Carbon::now()->subMinute(2)->toDateTimeString())->first();
+        $otp = Otp::where('token', $token)->where('used', 0)->where('created_at', '>=', Carbon::now()->subMinutes(2)->toDateTimeString())->first();
         if (empty($otp)) {
             return redirect()->route('customer.profile.user-contact-confirm-form', $token)->withErrors(['id' => 'آدرس وارد شده معتبر نیست']);
         }
@@ -194,7 +194,7 @@ class ProfileController extends Controller
     public function profileResendOtp($token)
     {
 
-        $otp = Otp::where('token', $token)->where('created_at', '<=', Carbon::now()->subMinute(2)->toDateTimeString())->first();
+        $otp = Otp::where('token', $token)->where('created_at', '<=', Carbon::now()->subMinutes(2)->toDateTimeString())->first();
         if (empty($otp)) {
             return redirect()->route('customer.profile.index', $token)->withErrors(['id' => 'آدرس وارد شده معتبر نیست']);
         }
